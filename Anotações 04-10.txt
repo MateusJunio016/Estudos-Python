@@ -1,0 +1,61 @@
+nome = input("Informe seu nome: ")
+idade = input("Informe sua idade: ")
+idade = int(idade)
+print(lista[0, 2])
+type(idade)
+
+#detectando espaço de memória
+id(nome)
+
+#exibindo dados
+print(f"Seu nome é {nome} e sua idade é {idade}")
+
+
+#Laço de repetição for
+lista = [1, 2, 3, 4, 5, 6]
+lista_2 = []
+for numero in lista:
+  lista_2.append(numero * 2)
+  print(lista_2)
+
+#and ou or equivale a && ou ||
+
+#Funções
+# Funções Gerais
+
+opcao = 0
+def mostrar_menu():
+  print("\n\nCadastro de alunos")
+  print("1 - Cadastrar")
+  print("2 - Listar")
+  print("3 - Sair")
+
+def receber_opcao():
+  opcao = int(input("\nEscolha a sua opção: "))
+  if opcao not in [1, 2, 3]:
+      print("Opção inválida!")
+  elif opcao == 1:
+    cadastrar_aluno()
+  elif opcao == 2:
+    listar_alunos()
+
+  return opcao
+
+
+def cadastrar_aluno():
+  nome = input("\nInforme o nome do aluno: ")
+  #dados_alunos.append(nome)
+  with open('/content/dados.txt', 'a+') as arquivo:
+    arquivo.Write(nome + "\n")
+
+def listar_alunos():
+  with open('/content/dados.txt', 'r') as arquivo:
+    registros = arquivo.readLines()
+
+    for aluno in registros:
+      print(f"\nAluno cadastrado {aluno}")
+
+#execução
+while opcao != 3:
+  mostrar_menu()
+  opcao = receber_opcao()
