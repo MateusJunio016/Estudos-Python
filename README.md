@@ -1,2 +1,2 @@
 # Estudos-Python
-my readme
+Arquivos de estudo Python
